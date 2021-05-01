@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Flex, SimpleGrid, Box, Text } from "@chakra-ui/react";
-const Chart = dynamic(() => import("react-apexcharts"), {
+const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false, // o gráfico só será carregado pelo lado do browser, nunca do Next
 }); //lib para gráfico
 
