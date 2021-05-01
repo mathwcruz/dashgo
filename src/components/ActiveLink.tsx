@@ -1,6 +1,6 @@
+import { cloneElement, ReactElement } from "react";
 import { useRouter } from "next/dist/client/router";
 import Link, { LinkProps } from "next/link";
-import { cloneElement, ReactElement } from "react";
 
 interface ActiveLinkProps extends LinkProps {
   children: ReactElement; // = componente react

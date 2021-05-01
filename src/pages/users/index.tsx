@@ -15,12 +15,13 @@ import {
   Td,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { RiAddLine } from "react-icons/ri";
 
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import Link from "next/link";
+import { UserHeader } from "../../components/UserHeader";
 
 export default function userList() {
   const isWideVersion = useBreakpointValue({
@@ -40,10 +41,8 @@ export default function userList() {
 
           <Box flex="1" borderRadius={8} bg="gray.800" p="8">
             <Flex mb="8" justify="space-between" align="center">
-              <Heading size="lg" fontWeight="normal">
-                Usuários
-              </Heading>
-              {/* componentizar */}
+              
+              <UserHeader title="Usuários" />
               <Link href="/users/create" passHref>
                 <Button
                   as="a"
@@ -55,11 +54,9 @@ export default function userList() {
                   Criar novo
                 </Button>
               </Link>
-              {/* componentizar */}
             </Flex>
 
-            <Table colorScheme="whiteAlpha">
-              {/* componentizar */}
+            <Table colorScheme="whiteAlpha"> {/* continuar componentização dps de dados retornados da API */}
               <Thead>
                 <Tr>
                   <Th px={["4", "4", "6"]} color="gray.300" w="8">

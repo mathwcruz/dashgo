@@ -7,7 +7,6 @@ import {
   Box,
   Divider,
   Flex,
-  Heading,
   HStack,
   SimpleGrid,
   VStack,
@@ -40,6 +39,7 @@ const createUserFormSchema = yup.object().shape({
 import { Input } from "../../components/Form/Input";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { UserHeader } from "../../components/UserHeader";
 
 export default function userCreate() {
   const { register, handleSubmit, formState } = useForm({
@@ -70,10 +70,8 @@ export default function userCreate() {
             bg="gray.800"
             p={["6", "8"]}
           >
-            <Heading size="lg" fontWeight="normal">
-              Criar usuário
-            </Heading>
-            {/* componentizar */}
+            <UserHeader title="Criar usuário" />
+
             <Divider my="6" borderColor="gray.700" />
             <VStack spacing="8">
               <SimpleGrid minChildWidth="240px" w="100%" spacing={["6", "8"]}>
@@ -109,7 +107,6 @@ export default function userCreate() {
                   {...register("password_confirmation")}
                 />
               </SimpleGrid>
-              {/* componentizar */}
             </VStack>
             <Flex mt="8" justify="flex-end">
               <HStack spacing="4">
