@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,6 +10,19 @@ import {
   VStack,
   Button,
 } from "@chakra-ui/react";
+import { useMutation } from "react-query"
+
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
+
+import { Input } from "../../components/Form/Input";
+import { Header } from "../../components/Header";
+import { Sidebar } from "../../components/Sidebar";
+import { UserHeader } from "../../components/UserHeader";
+
+import { api } from "../../services/api";
+import { queryClient } from "../../services/queryClient";
 
 type CreateUserFormData = {
   name: string;
@@ -36,20 +47,33 @@ const createUserFormSchema = yup.object().shape({
   ),
 });
 
-import { Input } from "../../components/Form/Input";
-import { Header } from "../../components/Header";
-import { Sidebar } from "../../components/Sidebar";
-import { UserHeader } from "../../components/UserHeader";
-
 export default function userCreate() {
+  const createUser = useMutation(async(user: CreateUserFormData) => {
+    const response = await api.post("users", {
+      user: {
+        ...user,
+        created_at: new Date(),
+      },
+    });
+
+    return response.data.user;
+  }, {
+    onSuccess: () => { // limpando os dados do cache caso o post dos dados dê sucesso
+      queryClient.invalidateQueries("users");
+    },
+  });
+
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(createUserFormSchema), // validações de formulários usando o schema criado a partir do yup
   });
+  const router = useRouter();
 
   const handleCreateUser: SubmitHandler<CreateUserFormData> = async (
     values
   ) => {
-    await new Promise((resolve) => setTimeout(resolve, 1800));
+    await createUser.mutateAsync(values); // fazendo um post no banco de usuários
+
+    router.push("/users");
   };
 
   return (
@@ -117,8 +141,8 @@ export default function userCreate() {
                 </Link>
                 <Button
                   type="submit"
-                  isLoading={formState.isSubmitting}
                   colorScheme="pink"
+                  isLoading={formState.isSubmitting}
                 >
                   Salvar
                 </Button>

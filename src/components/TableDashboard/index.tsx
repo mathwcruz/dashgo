@@ -12,7 +12,7 @@ import {
 
 interface TableDashboardProps {
   isWideVersion: boolean;
-};
+}
 
 // continuar a componentização depois q tiver dados retornados da API
 
@@ -46,4 +46,4 @@ export function TableDashboard({ isWideVersion }: TableDashboardProps) {
       </Tbody>
     </Table>
   );
-};
+}
