@@ -4,7 +4,7 @@ interface PaginationItemProps {
   isCurent?: boolean;
   page: number;
   onPageChange: (page: number) => void;
-}
+};
 
 export function PaginationItem({
   isCurent = false,
@@ -42,4 +42,4 @@ export function PaginationItem({
       {page}
     </Button>
   );
-}
+};

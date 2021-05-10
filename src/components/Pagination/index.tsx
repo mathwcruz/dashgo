@@ -7,7 +7,7 @@ interface PaginationProps {
   registersPerPage?: number;
   currentPage?: number;
   onPageChange: (page: number) => void;
-}
+};
 
 const SIBLINGS_COUNT = 1;
 
@@ -17,7 +17,7 @@ function generatePagesArray(from: number, to: number) {
       return from + index + 1; // criando as páginas 4, 5 e 6
     })
     .filter((page) => page > 0); // filtrando apenas as páginas que são maiores que 0
-}
+};
 
 export function Pagination({
   totalCountOfRegisters,
@@ -25,19 +25,20 @@ export function Pagination({
   currentPage = 1,
   onPageChange,
 }: PaginationProps) {
-  const lastPage = Math.floor(totalCountOfRegisters / registersPerPage);
+  const lastPage = Math.floor(totalCountOfRegisters / registersPerPage); // última página
 
   const previousPages =
     currentPage > 1
       ? generatePagesArray(currentPage - 1 - SIBLINGS_COUNT, currentPage - 1)
-      : [];
+      : []; // páginas a serem exibidas antes da atual
+
   const nextPages =
     currentPage < lastPage
       ? generatePagesArray(
           currentPage,
           Math.min(currentPage + SIBLINGS_COUNT, lastPage)
         )
-      : [];
+      : []; // páginas a serem exibidas após a atual
 
   return (
     <Stack
@@ -74,10 +75,10 @@ export function Pagination({
             page // renderizando as próximas páginas, caso tenha
           ) => <PaginationItem onPageChange={onPageChange} key={page} page={page} />)}
 
-        {currentPage + SIBLINGS_COUNT < lastPage && (
+        {(currentPage + SIBLINGS_COUNT) < lastPage && (
           <>
             <PaginationItem onPageChange={onPageChange} page={lastPage} />
-            {currentPage + 1 + SIBLINGS_COUNT < lastPage && (
+            {(currentPage + 1 + SIBLINGS_COUNT) < lastPage && (
               <Text color="gray.300" width="8" textAlign="center">
                 ...
               </Text>
@@ -87,4 +88,4 @@ export function Pagination({
       </Stack>
     </Stack>
   );
-}
+};

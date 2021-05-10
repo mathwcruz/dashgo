@@ -25,10 +25,9 @@ import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import { UserHeader } from "../../components/UserHeader";
 
-import { getUsers, useUsers } from "../../services/hooks/useUsers";
+import { useUsers } from "../../services/hooks/useUsers";
 import { queryClient } from "../../services/queryClient";
 import { api } from "../../services/api";
-import { GetServerSideProps } from "next";
 
 export default function userList() {
   const [page, setPage] = useState(1);
@@ -103,7 +102,7 @@ export default function userList() {
                         </Td>
                         <Td>
                           <Box>
-                            <Link color="pink.400" onMouseEnter={() => handlePrefetchUser(user.id)}>
+                            <Link color="pink.400" onMouseEnter={() => handlePrefetchUser(user?.id)}>
                               <Text fontWeight="bold">{user?.name}</Text>
                             </Link>
                             <Text
@@ -122,7 +121,7 @@ export default function userList() {
                 </Table>
 
                 <Pagination
-                  totalCountOfRegisters={data.totalCount}
+                  totalCountOfRegisters={data?.totalCount}
                   currentPage={page}
                   onPageChange={setPage}
                 />

@@ -50,10 +50,11 @@ export function makeServer() {
         );
       });
       this.get('/users/:id');
+
       this.post('/users');
 
       this.namespace = ''; // resetando a rota a ser chamada para nao prejudicar as rotas de api do Next
-      this.passthrough();
+      this.passthrough(); // todas as rotas passaram pelo mirage
     },
   });
 

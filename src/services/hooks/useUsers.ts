@@ -24,10 +24,10 @@ export async function getUsers(page: number): Promise<GetUserResponse> {
 
   const users = data.users.map((user) => {
     return {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      createdAt: new Date(user.createdAt).toLocaleDateString("pt-BR", {
+      id: user?.id,
+      name: user?.name,
+      email: user?.email,
+      createdAt: new Date(user?.createdAt).toLocaleDateString("pt-BR", {
         day: "2-digit",
         month: "long",
         year: "numeric",
