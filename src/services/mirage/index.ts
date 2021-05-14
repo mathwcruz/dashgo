@@ -29,7 +29,7 @@ export function makeServer() {
       }),
     },
     seeds(server) { // gerando dados fictícios para o início da requisição
-      server.createList('user', 200) // gerando usuários com dados fictícios
+      server.createList('user', 1) // gerando usuários com dados fictícios
     },
     routes() {
       this.namespace = 'api'; // nome da rota a ser chamada em cada requisição

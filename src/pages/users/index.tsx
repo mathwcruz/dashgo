@@ -95,28 +95,26 @@ export default function userList() {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {data?.users?.map((user) => (
-                      <Tr key={user?.id}>
+                      <Tr>
                         <Td px={["4", "4", "6"]}>
                           <Checkbox colorScheme="pink" />
                         </Td>
                         <Td>
                           <Box>
-                            <Link color="pink.400" onMouseEnter={() => handlePrefetchUser(user?.id)}>
-                              <Text fontWeight="bold">{user?.name}</Text>
+                            <Link color="pink.400" onMouseEnter={() => handlePrefetchUser("")}>
+                              <Text fontWeight="bold">Matheus da Cruz</Text>
                             </Link>
                             <Text
                               fontSize="sm"
                               color="gray.300"
                               fontWeight="bold"
                             >
-                              {user?.email}
+                              matheuswachcruz@gmail.com
                             </Text>
                           </Box>
                         </Td>
-                        {isWideVersion && <Td>{user?.createdAt}</Td>}
+                        {isWideVersion && <Td>14 de maio de 2021</Td>}
                       </Tr>
-                    ))}
                   </Tbody>
                 </Table>
 
