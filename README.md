@@ -6,6 +6,8 @@
 
 ## <p><h2 align="center">A dashboard app made in the fourth module of the Ignite Bootcamp provided by [Rocketseat](https://app.rocketseat.com.br/dashboard) in the React Track</h2> </p>
 
+## <p align="center"> <img src="https://github.com/mathwcruz/next-auth/blob/main/.github/Ignite.png" width="1400px"/> </p>
+
 <p align="center">
   <a href="#computer-demonstration-of-the-application-web">Demonstration of the application</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies-used">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
