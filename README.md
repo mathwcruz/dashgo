@@ -41,7 +41,7 @@
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain-wordmark.svg" alt="html5"  width="70" height="70"/>
 <img src="https://avatars.githubusercontent.com/u/54212428?s=280&v=4" alt="chakra-ui" width="70" height="70"/>
 <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="react" width="70" height="70"/>
-<img src="https://react-query.tanstack.com/_next/static/images/emblem-light-5d1cdce6c8bbb006ac6cefb8e1642877.svg" alt="react-query" width="70" height="70"/>
+<img src="https://react-query.tanstack.com/_next/static/images/emblem-light-628080660fddb35787ff6c77e97ca43e.svg" alt="react-query" width="70" height="70"/>
 <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" alt="typescript" width="70" height="70"/>
 <img src="https://www.drupal.org/files/project-images/nextjs-drupal.jpg" alt="next" width="70" height="70"/>
 </p>
