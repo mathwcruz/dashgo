@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="#computer-demonstration-of-the-application-web">Demonstration of the application</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#star-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies-used">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-application-installation">Application installation</a>
 </p>
@@ -34,6 +35,12 @@
 </p>
 
 <br>
+
+## :star: Features
+- [x] User listing
+- [x] User register
+- [x] Graphics containing application data
+- [x] Data fetching with local cache
 
 ## :rocket: Technologies used:
 
